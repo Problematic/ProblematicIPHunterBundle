@@ -14,4 +14,14 @@ interface HunterLogManagerInterface
 
     function addLog(HunterLogInterface $log);
 
+    /**
+     * @return HunterLogInterface
+     */
+    function find($id);
+
+    /**
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    function findLogs();
+
 }

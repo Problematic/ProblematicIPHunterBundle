@@ -1,0 +1,3 @@
+problematic_ip_hunter_log_index:
+    pattern: /
+    defaults: { _controller: ProblematicIPHunterBundle:Log:index }

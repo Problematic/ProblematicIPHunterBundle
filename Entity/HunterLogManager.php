@@ -31,4 +31,14 @@ class HunterLogManager extends AbstractHunterLogManager
         $this->em->flush();
     }
 
+    public function find($id)
+    {
+        return $this->repo->find($id);
+    }
+
+    public function findLogs()
+    {
+        return $this->repo->findAll();
+    }
+
 }

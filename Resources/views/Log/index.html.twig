@@ -1,0 +1,28 @@
+{% extends "ProblematicIPHunterBundle::layout.html.twig" %}
+
+{% block problematic_ip_hunter_content %}
+<table class="bordered-table zebra-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>CreatedAt</th>
+            <th>Username</th>
+            <th>IP</th>
+            <th>URI</th>
+            <th>Method</th>
+            <th>Token</th>
+        </tr>
+    </thead>
+{% for log in logs %}
+    <tr>
+        <td>{{ log.id }}</td>
+        <td>{{ log.createdAt.format(constant('DateTime::ATOM')) }}</td>
+        <td>{{ log.username is not null ? log.username : 'anon.' }}</td>
+        <td>{{ log.ip }}</td>
+        <td>{{ log.uri }}</td>
+        <td>{{ log.method }}</td>
+        <td>{{ log.token }}</td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}
